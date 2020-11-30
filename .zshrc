@@ -9,7 +9,7 @@ fi
 export PATH=$HOME/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/kevdog/.oh-my-zsh"
+export ZSH="/root/.oh-my-zsh"
 
 #bash style globbing rather than zsh
 setopt nonomatch
@@ -19,6 +19,8 @@ setopt nonomatch
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -151,7 +153,9 @@ alias tracert="traceroute"
 alias openports='sudo lsof -i -P | grep LISTEN'
 
 
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+#source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
