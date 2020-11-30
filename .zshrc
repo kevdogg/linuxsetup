@@ -143,7 +143,7 @@ export ARCHFLAGS="-arch x86_64"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ..='cd ..'
 alias ...='cd ../..'
-alias ls='ls -GwF'
+alias ls='ls --color=auto'
 alias ll='ls -alh'
 alias cd..='cd ..'
 alias gitconfig='code ~/.gitconfig'
