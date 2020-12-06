@@ -9,7 +9,7 @@ fi
 export PATH=$HOME/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin
 
 # Path to your oh-my-zsh installation.
-export ZSH="/root/.oh-my-zsh"
+export ZSH="${HOME}/.oh-my-zsh"
 
 #bash style globbing rather than zsh
 setopt nonomatch
@@ -158,4 +158,4 @@ alias openports='sudo lsof -i -P | grep LISTEN'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+#source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
