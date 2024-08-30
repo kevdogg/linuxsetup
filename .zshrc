@@ -106,16 +106,25 @@ zstyle ':completion:*' list-suffixeszstyle ':completion:*' expand prefix suffix
 
 
 #export HISTCONTROL=ignoreboth:erasedups
+alias history="history 0"
 export HISTSIZE=100000
 export HISTFILESIZE=100000
 export HISTFILE=~/.zhistory
+export SAVEHIST=$HISTSIZE
 
 # Z-Shell Specific Commands - not applicable to bash
-setopt HIST_FIND_NO_DUPS
-setopt inc_append_history
-setopt share_history
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt EXTENDED_HISTORY
 
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -151,6 +160,9 @@ alias cd..='cd ..'
 alias gitconfig='code ~/.gitconfig'
 alias tracert="traceroute"
 alias openports='sudo lsof -i -P | grep LISTEN'
+alias cd~='cd ~'
+alias cp='cp -i'
+alias wan-ip='dig +short myip.opendns.com @resolver1.opendns.com'
 
 
 #source ~/powerlevel10k/powerlevel10k.zsh-theme
@@ -159,3 +171,4 @@ alias openports='sudo lsof -i -P | grep LISTEN'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
