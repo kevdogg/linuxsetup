@@ -331,7 +331,11 @@ unset index
 
 ## END DIRECTORIES ##
 
-
+# make a directory and cd to it
+mcd()
+{
+    test -d "$1" || mkdir "$1" && cd "$1"
+}
 
 # Powerlevel10k installed as a oh-my-zsh plugin
 #source ~/powerlevel10k/powerlevel10k.zsh-theme
