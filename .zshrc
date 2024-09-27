@@ -142,7 +142,7 @@ fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
 
 # Zaw zsh Plugin
-source /home/kevdog/.oh-my-zsh/plugins/zaw/zaw.zsh
+source /home/kevdog/.oh-my-zsh/custom/plugins/zaw/zaw.zsh
 # CTRL-R will pull up zaw-history (backwards zsh history search)
 bindkey '^r' zaw-history
 # # CTRL-B will pull up zaw-git-branches which will search your current git branches and switch (git checkout) to the branch you select when you hit enter.
