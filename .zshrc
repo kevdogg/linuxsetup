@@ -104,6 +104,7 @@ plugins=(
   web-search
   zsh-syntax-highlighting
   zsh-completions
+  zaw
 )
 
 # enable the default zsh completions
@@ -139,6 +140,25 @@ setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
+
+# Zaw zsh Plugin
+source /home/kevdog/.oh-my-zsh/plugins/zaw/zaw.zsh
+# CTRL-R will pull up zaw-history (backwards zsh history search)
+bindkey '^r' zaw-history
+# # CTRL-B will pull up zaw-git-branches which will search your current git branches and switch (git checkout) to the branch you select when you hit enter.
+bindkey '^b' zaw-git-branches
+
+zstyle ':filter-select:highlight' matched fg=yellow,standout
+zstyle ':filter-select' max-lines 10 # use 10 lines for filter-select
+zstyle ':filter-select' max-lines -10 # use $LINES - 10 for filter-select
+zstyle ':filter-select' rotate-list yes # enable rotation for filter-select
+zstyle ':filter-select' case-insensitive yes # enable case-insensitive search
+zstyle ':filter-select' extended-search yes # see below
+zstyle ':filter-select' hist-find-no-dups yes # ignore duplicates in history source
+zstyle ':filter-select' escape-descriptions no # display literal newlines, not \n, etc
+zstyle ':zaw:git-files' default zaw-callback-append-to-buffer # set default action for git-files
+zstyle ':zaw:git-files' alt zaw-callback-edit-file # set the alt action for git-files
+
 
 # User configuration
 
